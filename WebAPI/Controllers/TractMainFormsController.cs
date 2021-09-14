@@ -1,0 +1,88 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using WebAPI.Models;
+
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+namespace WebAPI.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class TractMainFormsController : ControllerBase
+    {
+        /// <summary>
+        /// ADDED DATABASE LINK
+        /// </summary>
+        private readonly OGDatabaseSchemaV2Context _context;
+
+
+        /// <summary>
+        /// ADDED CONNECTION TO CURRENT CONTROLLER
+        /// </summary>
+        /// <param name="context"></param>
+        public TractMainFormsController(OGDatabaseSchemaV2Context context)
+        {
+            _context = context;
+        }
+
+
+        // GET: api/<TractMainFormsController>
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<TractMainForm>>> GetTractMainForm()
+        {
+            return await _context.TractMainForm.ToListAsync();
+        }
+
+
+        ////public IEnumerable<string> Get()
+        ////{
+        ////    return new string[] { "value1", "value2" };
+        ////}
+
+        /// <summary>
+        /// BY TRACT TABLE ID
+        /// </summary>
+        // GET api/<OwnerDetailsController>/5
+        [HttpGet("GetTractMainFormDetails/{id}")]
+        public async Task<ActionResult<TractMainForm>> GetTractMainFormDetails(int id)
+        {
+            var tractMainForm = await _context.TractMainForm.FindAsync(id);
+
+            if (tractMainForm == null)
+            {
+                return NotFound();
+            }
+
+            return tractMainForm;
+        }
+
+        ////// GET api/<TractMainFormsController>/5
+        ////[HttpGet("{id}")]
+        ////public string Get(int id)
+        ////{
+        ////    return "value";
+        ////}
+
+        ////// POST api/<TractMainFormsController>
+        ////[HttpPost]
+        ////public void Post([FromBody] string value)
+        ////{
+        ////}
+
+        ////// PUT api/<TractMainFormsController>/5
+        ////[HttpPut("{id}")]
+        ////public void Put(int id, [FromBody] string value)
+        ////{
+        ////}
+
+        ////// DELETE api/<TractMainFormsController>/5
+        ////[HttpDelete("{id}")]
+        ////public void Delete(int id)
+        ////{
+        ////}
+    }
+}
