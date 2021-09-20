@@ -38,6 +38,11 @@ namespace WebAPI.Controllers
         }
 
 
+        ////public IEnumerable<string> Get()
+        ////{
+        ////    return new string[] { "value1", "value2" };
+        ////}
+
         /// <summary>
         /// BY TRACT TABLE ID
         /// </summary>
@@ -55,6 +60,29 @@ namespace WebAPI.Controllers
             return tractMainForm;
         }
 
-        
+        ////// GET api/<TractMainFormsController>/5
+        ////[HttpGet("{id}")]
+        ////public string Get(int id)
+        ////{
+        ////    return "value";
+        ////}
+
+        ////// POST api/<TractMainFormsController>
+        ////[HttpPost]
+        ////public void Post([FromBody] string value)
+        ////{
+        ////}
+
+        ////// PUT api/<TractMainFormsController>/5
+        ////[HttpPut("{id}")]
+        ////public void Put(int id, [FromBody] string value)
+        ////{
+        ////}
+
+        ////// DELETE api/<TractMainFormsController>/5
+        ////[HttpDelete("{id}")]
+        ////public void Delete(int id)
+        ////{
+        ////}
     }
 }
