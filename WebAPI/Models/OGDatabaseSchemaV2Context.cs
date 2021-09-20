@@ -92,7 +92,7 @@ namespace WebAPI.Models
 
 
         /// <summary>
-        /// 
+        /// DATA CONNECTION
         /// </summary>
         /// <param name="optionsBuilder"></param>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

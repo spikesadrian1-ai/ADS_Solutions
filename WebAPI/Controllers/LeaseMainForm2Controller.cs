@@ -33,7 +33,7 @@ namespace WebAPI.Controllers
 
 
         /////
-        ///JSON RESULT
+        ///JSON RESULTS
         ////
         [HttpGet]
         public JsonResult Get()
