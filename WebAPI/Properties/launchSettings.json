@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/LeaseMainForm2",
+      "launchUrl": "api/c",
       //"launchUrl": "OwnerAddressesMain",
       //"launchUrl": "swagger",
       "environmentVariables": {
