@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
@@ -38,5 +40,20 @@ namespace WebAPI.Models
         public DateTime? CreatedDate { get; set; }
         public DateTime? ModifiedDate { get; set; }
         public string ModifiedBy { get; set; }
+
+        public Task<object> GetAllPaymentObligations(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<PaymentObligations>> RetrieveAllPaymentObligations(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchAllPaymentObligations(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

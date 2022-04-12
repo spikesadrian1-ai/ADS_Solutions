@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPI.Models;
 
 namespace WebAPI.Repositories
 {
@@ -13,6 +14,14 @@ namespace WebAPI.Repositories
         /// <param name="name"></param>
         /// <returns></returns>
         public Task<IEnumerable<OwnerAddressesMain>> RetrieveOwnerAddressesMain(string name);
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        Task<object> GetOwnerAddressesMain(int ID/*, string tractid*/);
 
 
         /// <summary>

@@ -47,7 +47,7 @@ namespace WebAPI.Controllers
         [HttpGet("GetAllContracts/{id}")]
         public async Task<ActionResult<ContractMainForm2>> GetAllContracts(int id)
         {
-            var contractMainForm2 = await _context.CheckMasterMainForm.FindAsync(id);
+            var contractMainForm2 = await _context.ContractMainForm2.FindAsync(id);
 
             if (contractMainForm2 == null)
             {

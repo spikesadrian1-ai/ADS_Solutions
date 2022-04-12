@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
@@ -41,5 +43,20 @@ namespace WebAPI.Models
         public decimal? Other { get; set; }
         public string SubsidenceText { get; set; }
         public decimal? Subsidence { get; set; }
+
+        public Task<object> GetAllGrantorsGrantees(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<GrantorsGrantees>> RetrieveAllGrantorsGrantees(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchAllGrantorsGrantees(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

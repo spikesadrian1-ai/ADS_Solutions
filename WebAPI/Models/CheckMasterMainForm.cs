@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
@@ -38,5 +40,20 @@ namespace WebAPI.Models
         public DateTime? AcctDate { get; set; }
         public string TractId { get; set; }
         public string LeaseId { get; set; }
+
+        public Task<object> GetAllChecks(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<CheckMasterMainForm>> RetrieveAllChecks(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchAllChecks(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

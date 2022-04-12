@@ -5,7 +5,7 @@ using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class OwnerAddressesMain : IOwnerRepository
+    public partial class OwnerAddressesMain : IOwnerAddressesMainRepository
     {
         public int Id { get; set; }
         public string OwnerId { get; set; }
@@ -51,13 +51,17 @@ namespace WebAPI.Models
         public DateTime? ModifiedDateTime { get; set; }
         public string TractOwnerPk { get; set; }
 
-
-        public Task<object> SearchOwners1(string name, string tractid)
+        public Task<object> GetOwnerAddressesMain(int ID)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<OwnerAddressesMain>> SearchOwners(string name)
+        public Task<IEnumerable<OwnerAddressesMain>> RetrieveOwnerAddressesMain(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchOwnerAddressesMain(string name)
         {
             throw new NotImplementedException();
         }

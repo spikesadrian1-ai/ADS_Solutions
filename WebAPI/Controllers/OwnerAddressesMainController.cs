@@ -37,7 +37,7 @@ namespace WebAPI.Controllers
         /// </summary>
         // GET: api/<OwnerDetailsController>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<OwnerAddressesMain>>> GetOwnerAddressesMain()
+        public async Task<ActionResult<IEnumerable<OwnerAddressesMain>>> RetrieveOwnerAddressesMain()
         {
             return await _context.OwnerAddressesMain.ToListAsync();
 
@@ -47,8 +47,8 @@ namespace WebAPI.Controllers
         /// <summary>
         /// BY OWNER TABLE ID
         /// </summary>
-        [HttpGet("GetOwnerAddressesMainDetails/{id}")]
-        public async Task<ActionResult<OwnerAddressesMain>> GetOwnerAddressesMainDetails(int id)
+        [HttpGet("GetOwnerAddressesMain/{id}")]
+        public async Task<ActionResult<OwnerAddressesMain>> GetOwnerAddressesMain(int id)
         {
             var ownerAddressesMain = await _context.OwnerAddressesMain.FindAsync(id);
 
@@ -66,12 +66,12 @@ namespace WebAPI.Controllers
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        [HttpGet("{SearchOwners}")]
-        public async Task<IEnumerable<OwnerAddressesMain>> SearchOwners(string name)
+        [HttpGet("{SearchOwnerAddressesMain}")]
+        public async Task<IEnumerable<OwnerAddressesMain>> SearchOwnerAddressesMain(string name)
         {
             try
             {
-                var result = await SearchOwners(name);
+                var result = await SearchOwnerAddressesMain(name);
 
                 if (result.Any())
                 {

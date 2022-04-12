@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
@@ -123,5 +125,20 @@ namespace WebAPI.Models
         public string PropertyType { get; set; }
         public string Type { get; set; }
         public string StatusCode { get; set; }
+
+        public Task<object> GetAllContracts(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<ContractMainForm2>> RetrieveAllContracts(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchAllContracts(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

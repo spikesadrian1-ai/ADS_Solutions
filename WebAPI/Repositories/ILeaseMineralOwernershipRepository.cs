@@ -7,20 +7,20 @@ namespace WebAPI.Repositories
 {
     public interface ILeaseMineralOwernershipRepository
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        public Task<IEnumerable<lea>> RetrievePostal(string name);
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="name"></param>
+        ///// <returns></returns>
+        //public Task<IEnumerable<lea>> RetrievePostal(string name);
 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        Task<object> SearchPostal(string name/*, string tractid*/);
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="name"></param>
+        ///// <returns></returns>
+        //Task<object> SearchPostal(string name/*, string tractid*/);
 
     }
 }

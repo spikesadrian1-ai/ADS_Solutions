@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
@@ -31,5 +33,20 @@ namespace WebAPI.Models
         public string UnitId { get; set; }
         public string Active { get; set; }
         public string Notes { get; set; }
+
+        public Task<object> GetAllDefaultBanks(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<DefaultBankMasters>> RetrieveAllDefaultBanks(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchAllDefaultBanks(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

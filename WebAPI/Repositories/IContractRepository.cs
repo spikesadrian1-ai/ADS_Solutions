@@ -21,7 +21,7 @@ namespace WebAPI.Repositories
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        Task<object> GetAllContracts(string name/*, string tractid*/);
+        Task<object> GetAllContracts(int ID/*, string tractid*/);
 
 
         /// <summary>

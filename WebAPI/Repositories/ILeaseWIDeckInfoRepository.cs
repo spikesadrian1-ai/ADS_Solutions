@@ -8,20 +8,20 @@ namespace WebAPI.Repositories
 {
     public interface ILeaseWIDeckInfoRepository
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        public Task<IEnumerable<lease>> RetrieveAllPostal(string name);
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="name"></param>
+        ///// <returns></returns>
+        //public Task<IEnumerable<lease>> RetrieveAllPostal(string name);
 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        Task<object> SearchAllPostal(string name/*, string tractid*/);
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="name"></param>
+        ///// <returns></returns>
+        //Task<object> SearchAllPostal(string name/*, string tractid*/);
 
     }
 }

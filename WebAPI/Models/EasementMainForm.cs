@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class EasementMainForm
+    public partial class EasementMainForm : IEasementRepository
     {
         public int Id { get; set; }
         public string EasementId { get; set; }
@@ -227,5 +228,20 @@ namespace WebAPI.Models
         public string ModifiedBy { get; set; }
         public DateTime? ModifiedDateTime { get; set; }
         public string TractOwnerPk { get; set; }
+
+        public Task<object> GetAllEasements()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> GetEasementByID(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> GetEasementByID()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
