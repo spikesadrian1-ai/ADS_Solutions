@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using WebAPI.Models;
+
+namespace WebAPI.Repositories
+{
+    public interface INpriRepository
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public Task<IEnumerable<Npri>> RetrieveNPRInterest(string name);
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        Task<object> SearchNPRInterest(string name/*, string tractid*/);
+
+    }
+}

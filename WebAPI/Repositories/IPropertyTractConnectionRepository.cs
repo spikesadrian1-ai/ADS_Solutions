@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using WebAPI.Models;
+
+namespace WebAPI.Repositories
+{
+    public interface IPropertyTractConnectionRepository
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public Task<IEnumerable<PropertyTractConnection>> RetrieveAllPropertyTractConnections(string name);
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        Task<object> SearchAllPropertyTractConnections(string name/*, string tractid*/);
+
+    }
+}

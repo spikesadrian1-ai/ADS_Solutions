@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class DraftMasterMain
+    public partial class DraftMasterMain : IDraftMasterMainRepository
     {
         public int Id { get; set; }
         public string PropertyType { get; set; }
@@ -18,5 +20,20 @@ namespace WebAPI.Models
         public DateTime DatePaid { get; set; }
         public string PaidById { get; set; }
         public string DraftFormId { get; set; }
+
+        public Task<object> GetAllDrafts(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<DraftMasterMain>> RetrieveAllDrafts(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchAllDrafts(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

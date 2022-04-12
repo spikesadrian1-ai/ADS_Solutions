@@ -30,23 +30,22 @@ namespace WebAPI.Controllers
         }
 
 
+        /// <summary>
+        /// ALL OWNERS
+        /// CREATE ASYNC METHOD
+        /// </summary>
         // GET: api/<TractMainFormsController>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TractMainForm>>> GetTractMainForm()
         {
             return await _context.TractMainForm.ToListAsync();
         }
-
-
-        ////public IEnumerable<string> Get()
-        ////{
-        ////    return new string[] { "value1", "value2" };
-        ////}
+  
 
         /// <summary>
         /// BY TRACT TABLE ID
         /// </summary>
-        // GET api/<OwnerDetailsController>/5
+        // GET api/<TractMainFormsController>/5
         [HttpGet("GetTractMainFormDetails/{id}")]
         public async Task<ActionResult<TractMainForm>> GetTractMainFormDetails(int id)
         {
@@ -60,29 +59,7 @@ namespace WebAPI.Controllers
             return tractMainForm;
         }
 
-        ////// GET api/<TractMainFormsController>/5
-        ////[HttpGet("{id}")]
-        ////public string Get(int id)
-        ////{
-        ////    return "value";
-        ////}
 
-        ////// POST api/<TractMainFormsController>
-        ////[HttpPost]
-        ////public void Post([FromBody] string value)
-        ////{
-        ////}
 
-        ////// PUT api/<TractMainFormsController>/5
-        ////[HttpPut("{id}")]
-        ////public void Put(int id, [FromBody] string value)
-        ////{
-        ////}
-
-        ////// DELETE api/<TractMainFormsController>/5
-        ////[HttpDelete("{id}")]
-        ////public void Delete(int id)
-        ////{
-        ////}
     }
 }

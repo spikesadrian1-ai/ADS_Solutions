@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace WebAPI.Models
 {
-    public partial class DefaultBankMasters
+    public partial class DefaultBankMasters : IDefaultBankMasterRepository
     {
         public int Id { get; set; }
         public string BankId { get; set; }

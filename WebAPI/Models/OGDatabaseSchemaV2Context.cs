@@ -6,6 +6,11 @@ namespace WebAPI.Models
 {
     public partial class OGDatabaseSchemaV2Context : DbContext
     {
+        //internal object IOwnerRepository;
+        //public object ownerAddressesMain { get; internal set; }
+
+
+
         public OGDatabaseSchemaV2Context()
         {
         }
@@ -44,7 +49,7 @@ namespace WebAPI.Models
         public virtual DbSet<Npri> Npri { get; set; }
         public virtual DbSet<Nri> Nri { get; set; }
         public virtual DbSet<OwnerAddressesMain> OwnerAddressesMain { get; set; }
-        public virtual DbSet<OwnerConnection> OwnerConnection { get; set; }
+         public virtual DbSet<OwnerConnection> OwnerConnection { get; set; }
         public virtual DbSet<OwnerDetails> OwnerDetails { get; set; }
         public virtual DbSet<OwnersContactInfo> OwnersContactInfo { get; set; }
         public virtual DbSet<PaymentObligations> PaymentObligations { get; set; }

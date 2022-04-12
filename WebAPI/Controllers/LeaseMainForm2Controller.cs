@@ -21,6 +21,7 @@ namespace WebAPI.Controllers
         /// ADDED DATABASE LINK
         /// </summary>
         private readonly IConfiguration _context;
+        //private readonly OGDatabaseSchemaV2Context _context1;
 
         /// <summary>
         /// ADDED CONNECTION TO CURRENT CONTROLLER
@@ -31,6 +32,10 @@ namespace WebAPI.Controllers
             _context = context;
         }
 
+        //public LeaseMainForm2Controller(OGDatabaseSchemaV2Context context)
+        //{
+        //    _context1 = context;
+        //}
 
         /////
         ///JSON RESULTS
@@ -61,18 +66,65 @@ namespace WebAPI.Controllers
 
         }
 
-
-        ///// <summary>
-        ///// ALL OWNERS
-        ///// CREATE ASYNC METHOD
-        ///// </summary>
-        //// GET: api/<OwnerDetailsController>
+        ///////
+        /////JSON RESULTS
+        //////
         //[HttpGet]
-        //public async Task<ActionResult<IEnumerable<LeaseMainForm2>>> GetLeaseMainForm2()
+        //public JsonResult GetAll()
         //{
-        //    return await _context.LeaseMainForm2.ToListAsync();
+
+        //    string query = @"SELECT * FROM dbo.LeaseMainForm2";
+
+        //    DataTable leaseTable = new DataTable();
+        //    const string V = "DevConnection";
+        //    string sqlDataSource = _context1.GetConnectionString(V);
+        //    System.Data.SqlClient.SqlDataReader leaseReader;
+        //    using (System.Data.SqlClient.SqlConnection devCon = new System.Data.SqlClient.SqlConnection(sqlDataSource))
+        //    {
+        //        devCon.Open();
+        //        using (System.Data.SqlClient.SqlCommand leaseCommand = new System.Data.SqlClient.SqlCommand(query, devCon))
+        //        {
+        //            leaseReader = leaseCommand.ExecuteReader();
+        //            leaseTable.Load(leaseReader);
+        //            leaseReader.Close();
+        //            devCon.Close();
+        //        }
+        //    }
+
+        //    return new JsonResult(leaseTable);
 
         //}
+
+        ///////
+        /////JSON RESULTS
+        //////
+        //[HttpGet("{id}")]
+        //public JsonResult GetByID()
+        //{
+
+        //    string query = @"SELECT * FROM dbo.LeaseMainForm2";
+
+        //    DataTable leaseTable = new DataTable();
+        //    const string V = "DevConnection";
+        //    string sqlDataSource = _context.GetConnectionString(V);
+        //    System.Data.SqlClient.SqlDataReader leaseReader;
+        //    using (System.Data.SqlClient.SqlConnection devCon = new System.Data.SqlClient.SqlConnection(sqlDataSource))
+        //    {
+        //        devCon.Open();
+        //        using (System.Data.SqlClient.SqlCommand leaseCommand = new System.Data.SqlClient.SqlCommand(query, devCon))
+        //        {
+        //            leaseReader = leaseCommand.ExecuteReader();
+        //            leaseTable.Load(leaseReader);
+        //            leaseReader.Close();
+        //            devCon.Close();
+        //        }
+        //    }
+
+        //    return new JsonResult(leaseTable);
+
+        //}
+
+
 
         ///// <summary>
         ///// BY OWNER TABLE ID
@@ -81,7 +133,7 @@ namespace WebAPI.Controllers
         //[HttpGet("{id}")]
         //public async Task<ActionResult<LeaseMainForm2>> GetLeaseMainForm2Details(int id)
         //{
-        //    var leaseMainForm2 = await _context.LeaseMainForm2.FindAsync(id);
+        //    var leaseMainForm2 = await _context1.LeaseMainForm2.FindAsync(id);
 
         //    if (leaseMainForm2 == null)
         //    {

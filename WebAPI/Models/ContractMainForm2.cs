@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace WebAPI.Models
 {
-    public partial class ContractMainForm2
+    public partial class ContractMainForm2 : IContractRepository
     {
         public int Id { get; set; }
         public string ContractId { get; set; }

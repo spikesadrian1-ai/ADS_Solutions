@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class OwnerAddressesMain
+    public partial class OwnerAddressesMain : IOwnerRepository
     {
         public int Id { get; set; }
         public string OwnerId { get; set; }
@@ -48,5 +50,16 @@ namespace WebAPI.Models
         public string ModifiedBy { get; set; }
         public DateTime? ModifiedDateTime { get; set; }
         public string TractOwnerPk { get; set; }
+
+
+        public Task<object> SearchOwners1(string name, string tractid)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<OwnerAddressesMain>> SearchOwners(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

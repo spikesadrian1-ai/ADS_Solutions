@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class ChainOfTitleForm
+    public partial class ChainOfTitleForm : ICOTRepository
     {
         public int Id { get; set; }
         public string InstrumentId { get; set; }
@@ -34,5 +36,19 @@ namespace WebAPI.Models
         public string Search3 { get; set; }
         public string Search4 { get; set; }
         public string LegalDescription { get; set; }
+
+        public Task<IEnumerable<ChainOfTitleForm>> RetrieveAllCOTs(string name)
+        {
+            throw new NotImplementedException();
+        }
+        public Task<object> GetAllCOTs(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchAllCOTs(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

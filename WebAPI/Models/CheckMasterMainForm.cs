@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace WebAPI.Models
 {
-    public partial class CheckMasterMainForm
+    public partial class CheckMasterMainForm : ICheckMasterRepository
     {
         public int Id { get; set; }
         public string PropertyType { get; set; }

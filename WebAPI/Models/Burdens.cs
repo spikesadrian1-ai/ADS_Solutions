@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class Burdens
+    public partial class Burdens : IBurdensRepository
     {
         public int Id { get; set; }
         public string OwnerId { get; set; }
@@ -19,5 +21,15 @@ namespace WebAPI.Models
         public string LeaseId { get; set; }
         public string WellId { get; set; }
         public string RoyId { get; set; }
+
+        public Task<IEnumerable<Burdens>> RetrieveAllBurdens(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchBurdens(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

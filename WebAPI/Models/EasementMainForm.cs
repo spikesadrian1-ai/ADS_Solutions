@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace WebAPI.Models
 {
@@ -44,7 +45,7 @@ namespace WebAPI.Models
         public DateTime? Divested { get; set; }
         public DateTime? InputDate { get; set; }
         public DateTime? ExpirationDate { get; set; }
-        public DateTime? CheckOn { get; set; }
+        public DateTime? CheckOn { get; set; }        
         public DateTime? Surrendered { get; set; }
         public DateTime? OtherDate { get; set; }
         public DateTime? SecondExpDate { get; set; }
