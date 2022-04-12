@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class Npri
+    public partial class Npri : INpriRepository
     {
         public int Id { get; set; }
         public string NpriOwnerId { get; set; }
@@ -19,5 +21,25 @@ namespace WebAPI.Models
         public string EasementId { get; set; }
         public string RowId { get; set; }
         public string SuaId { get; set; }
+
+        public Task<object> AddNewNPRInterest(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> GetNPRInterest(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Npri>> RetrieveNPRInterest(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchNPRInterest(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

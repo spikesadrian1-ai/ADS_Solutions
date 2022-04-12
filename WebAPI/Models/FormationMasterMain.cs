@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class FormationMasterMain
+    public partial class FormationMasterMain : IFormationMasterMainRepository
     {
         public int Id { get; set; }
         public string FormationId { get; set; }
@@ -47,5 +49,20 @@ namespace WebAPI.Models
         public int? LeaseTermYrs { get; set; }
         public string TopLease { get; set; }
         public string WellId { get; set; }
+
+        public Task<object> GetAllFormations(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<FormationMasterMain>> RetrieveAllFormations(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchAllFormations(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

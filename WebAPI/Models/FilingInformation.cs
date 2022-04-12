@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class FilingInformation
+    public partial class FilingInformation : IFilingInformationRepository
     {
         public int Id { get; set; }
         public DateTime? FilingDate { get; set; }
@@ -21,5 +23,20 @@ namespace WebAPI.Models
         public string LeaseId { get; set; }
         public string GrantorId { get; set; }
         public string GranteeId { get; set; }
+
+        public Task<object> GetAllFilings(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<FilingInformation>> RetrieveAllFilings(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchAllFilings(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

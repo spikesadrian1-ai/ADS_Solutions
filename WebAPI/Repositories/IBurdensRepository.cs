@@ -21,6 +21,14 @@ namespace WebAPI.Repositories
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
+        Task<object> GetAllBurdens(int ID/*, string tractid*/);
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         Task<object> SearchBurdens(string name/*, string tractid*/);
     }
 }

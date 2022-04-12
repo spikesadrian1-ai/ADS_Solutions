@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace WebAPI.Models
 {
-    public partial class PaymentObligations
+    public partial class PaymentObligations : IPaymentObligationsRepository
     {
         public int Id { get; set; }
         public string PayeeId { get; set; }

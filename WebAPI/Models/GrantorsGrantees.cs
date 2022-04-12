@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace WebAPI.Models
 {
-    public partial class GrantorsGrantees
+    public partial class GrantorsGrantees : IGrantorGranteeMainRepository
     {
         public int Id { get; set; }
         public string GrantorId { get; set; }

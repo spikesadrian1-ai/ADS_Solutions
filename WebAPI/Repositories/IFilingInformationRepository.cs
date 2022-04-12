@@ -21,6 +21,14 @@ namespace WebAPI.Repositories
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
+        Task<object> GetAllFilings(int ID/*, string tractid*/);
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         Task<object> SearchAllFilings(string name/*, string tractid*/);
 
     }

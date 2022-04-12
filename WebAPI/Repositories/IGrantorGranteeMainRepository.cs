@@ -21,6 +21,14 @@ namespace WebAPI.Repositories
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
+        Task<object> GetAllGrantorsGrantees(int ID/*, string tractid*/);
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         Task<object> SearchAllGrantorsGrantees(string name/*, string tractid*/);
 
     }

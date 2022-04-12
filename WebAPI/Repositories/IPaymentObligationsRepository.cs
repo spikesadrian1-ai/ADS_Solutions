@@ -13,7 +13,15 @@ namespace WebAPI.Repositories
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public Task<IEnumerable<PaymentObligations>> RetrievePaymentObligations(string name);
+        public Task<IEnumerable<PaymentObligations>> RetrieveAllPaymentObligations(string name);
+
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        Task<object> GetAllPaymentObligations(int ID/*, string tractid*/);
 
 
         /// <summary>
@@ -21,7 +29,7 @@ namespace WebAPI.Repositories
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        Task<object> SearchPaymentObligations(string name/*, string tractid*/);
+        Task<object> SearchAllPaymentObligations(string name/*, string tractid*/);
 
     }
 }

@@ -22,6 +22,11 @@ namespace WebAPI.Models
         public string WellId { get; set; }
         public string RoyId { get; set; }
 
+        public Task<object> GetAllBurdens(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<IEnumerable<Burdens>> RetrieveAllBurdens(string name)
         {
             throw new NotImplementedException();

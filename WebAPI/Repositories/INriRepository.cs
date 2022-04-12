@@ -13,7 +13,7 @@ namespace WebAPI.Repositories
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public Task<IEnumerable<Nri>> RetrieveNRInterest(string name);
+        public Task<IEnumerable<Nri>> RetrieveAllNRInterest(string name);
 
 
         /// <summary>
@@ -21,7 +21,15 @@ namespace WebAPI.Repositories
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        Task<object> SearchNRInterest(string name/*, string tractid*/);
+        Task<object> GetNRInterest(int ID/*, string tractid*/);
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        Task<object> SearchAllNRInterest(string name/*, string tractid*/);
 
     }
 }
