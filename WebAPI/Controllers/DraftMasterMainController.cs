@@ -83,6 +83,15 @@ namespace WebAPI.Controllers
                     "Error retrieving data from database");
 
             }
+
+            //  OR TO CUT DOWN ON LINES OF CODE PRETTY COOL
+            //try
+            //{
+            //    IEnumerable<DraftMasterMain> result = await SearchAllDrafts(name);
+            //    return result.Any() ? (IEnumerable<DraftMasterMain>)Ok(result) : (IEnumerable<DraftMasterMain>)NotFound();
+            //}
+            //catch (Exception)
+            //{ return (IEnumerable<DraftMasterMain>)StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from database"); }
         }
 
 
