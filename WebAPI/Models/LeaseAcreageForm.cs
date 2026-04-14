@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class LeaseAcreageForm
+    public partial class LeaseAcreageForm : ILeaseAcreageRepository
     {
         public int Id { get; set; }
         public string MineralOwnership { get; set; }
@@ -25,5 +27,20 @@ namespace WebAPI.Models
         public string ModifiedBy { get; set; }
         public DateTime? ModifiedDateTime { get; set; }
         public Guid? TractOwnerPk { get; set; }
+
+        public Task<object> GetLeaseAcreagesByID(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<LeaseAcreageForm>> RetrieveAllLeaseAcreages()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchAllLeaseAcreages(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

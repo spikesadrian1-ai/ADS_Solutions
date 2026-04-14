@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class OwnersContactInfo
+    public partial class OwnersContactInfo : IOwnersContactInfoRepository
     {
         public int Id { get; set; }
         public string OwnerId { get; set; }
@@ -14,5 +16,15 @@ namespace WebAPI.Models
         public string Fax { get; set; }
         public string Mobile { get; set; }
         public string Email { get; set; }
+
+        public Task<IEnumerable<IOwnersContactInfoRepository>> RetrieveOwnersContactInfo()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchOwnersContactInfo(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

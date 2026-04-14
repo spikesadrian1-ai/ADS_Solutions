@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class NewPayment
+    public partial class NewPayment : INewPaymentRepository
     {
         public int Id { get; set; }
         public string PropertyType { get; set; }
@@ -23,5 +25,15 @@ namespace WebAPI.Models
         public string BankId { get; set; }
         public string BankAccountNo { get; set; }
         public string BankFees { get; set; }
+
+        public Task<IEnumerable<NewPayment>> RetrieveAllPayments()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchAllPayments(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

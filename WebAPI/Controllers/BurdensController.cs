@@ -44,8 +44,8 @@ namespace WebAPI.Controllers
         /// <summary>
         /// BY Burdens TABLE ID
         /// </summary>
-        [HttpGet("GetBurdens/{id}")]
-        public async Task<ActionResult<Burdens>> GetOwnerAddressesMainDetails(int id)
+        [HttpGet("GetBurdensById/{id}")]
+        public async Task<ActionResult<Burdens>> GetBurdensById(int id)
         {
             var burdens = await _context.Burdens.FindAsync(id);
 
@@ -63,12 +63,12 @@ namespace WebAPI.Controllers
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        [HttpGet("{SearchBurdens}")]
-        public async Task<IEnumerable<Burdens>> SearchBurdens(string name)
+        [HttpGet("{SearchBurdensByName}")]
+        public async Task<IEnumerable<Burdens>> SearchBurdensByName(string name)
         {
             try
             {
-                var result = await SearchBurdens(name);
+                var result = await SearchBurdensByName(name);
 
                 if (result.Any())
                 {

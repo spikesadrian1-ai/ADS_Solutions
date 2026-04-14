@@ -5,7 +5,7 @@ using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class PaymentObligations : IPaymentObligationsRepository
+    public partial class PaymentObligations //: IPaymentObligationsRepository
     {
         public int Id { get; set; }
         public string PayeeId { get; set; }

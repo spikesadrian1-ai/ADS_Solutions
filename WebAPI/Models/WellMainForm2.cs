@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class WellMainForm2
+    public partial class WellMainForm2 : IWellMainFormRepository
     {
         public int Id { get; set; }
         public string WellIdNo { get; set; }
@@ -136,5 +138,37 @@ namespace WebAPI.Models
         public string ModifiedBy { get; set; }
         public DateTime? ModifiedDateTime { get; set; }
         public string TractOwnerPk { get; set; }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
+        public Task<object> GetWellsByID(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public Task<IEnumerable<WellMainForm2>> RetrieveAllWells()
+        {
+            throw new NotImplementedException();
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public Task<object> SearchAllWells(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

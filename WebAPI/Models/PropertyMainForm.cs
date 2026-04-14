@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class PropertyMainForm
+    public partial class PropertyMainForm : IPropertyMainRepository
     {
         public int Id { get; set; }
         public string PropertyId { get; set; }
@@ -131,5 +133,20 @@ namespace WebAPI.Models
         public decimal? Interest { get; set; }
         public string InterestType { get; set; }
         public decimal? NetProducingRoyaltyAcres { get; set; }
+
+        public Task<object> GetPropertiesByID(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<PropertyMainForm>> RetrieveAllProperty()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchProperty(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -66,19 +66,28 @@ namespace WebAPI.Controllers
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        [HttpGet("{SearchOwnerAddressesMain}")]
+        [HttpGet("SearchOwnerAddressesMain/{name}")]
         public async Task<IEnumerable<OwnerAddressesMain>> SearchOwnerAddressesMain(string name)
         {
+            IQueryable<OwnerAddressesMain> query = _context.OwnerAddressesMain;
+
             try
             {
-                var result = await SearchOwnerAddressesMain(name);
+                //IQueryable<CountyMasterMainForm> query = _context.CountyMasterMainForm;
 
-                if (result.Any())
+                if (!string.IsNullOrEmpty(name))
                 {
-                    return (IEnumerable<OwnerAddressesMain>)Ok(result);
+                    query = query.Where(e => e.OwnerId.Contains(name)
+                                     //|| e.CountyName.Contains(countyname)
+                                     );
+
+                }
+                if (name != null)
+                {
+                    query = query.Where(e => e.OwnerId == name);
                 }
 
-                return (IEnumerable<OwnerAddressesMain>)NotFound();
+                //return query.ToList();
             }
             catch (Exception)
             {
@@ -86,6 +95,26 @@ namespace WebAPI.Controllers
                     "Error retrieving data from database");
 
             }
+
+            return (IEnumerable<OwnerAddressesMain>)query.ToList();
+
+            //try
+            //{
+            //    var result = await SearchOwnerAddressesMain(name);
+
+            //    if (result.Any())
+            //    {
+            //        return (IEnumerable<OwnerAddressesMain>)Ok(result);
+            //    }
+
+            //    return (IEnumerable<OwnerAddressesMain>)NotFound();
+            //}
+            //catch (Exception)
+            //{
+            //    return (IEnumerable<OwnerAddressesMain>)StatusCode(StatusCodes.Status500InternalServerError,
+            //        "Error retrieving data from database");
+
+            //}
         }
 
 

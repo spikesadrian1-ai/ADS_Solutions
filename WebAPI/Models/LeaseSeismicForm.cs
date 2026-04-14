@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class LeaseSeismicForm
+    public partial class LeaseSeismicForm : ILeaseSeismicRepository
     {
         public int Id { get; set; }
         public int? SeismicPermitExpirationDays { get; set; }
@@ -25,5 +27,15 @@ namespace WebAPI.Models
         public string ModifiedBy { get; set; }
         public DateTime? ModifiedDateTime { get; set; }
         public Guid? TractOwnerPk { get; set; }
+
+        public Task<IEnumerable<LeaseSeismicForm>> RetrieveAllLeaseSeismic()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchAllLeaseSeismic(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

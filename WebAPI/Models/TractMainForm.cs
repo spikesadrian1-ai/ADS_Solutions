@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class TractMainForm
+    public partial class TractMainForm : ITractMainRepository
     {
         public int Id { get; set; }
         public string TractId { get; set; }
@@ -64,5 +66,92 @@ namespace WebAPI.Models
         public DateTime? ModifiedDateTime { get; set; }
         public string TwnRngSecPk { get; set; }
         public string TractOwnerPk { get; set; }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
+        public Task<object> GetTractsByID(string TractID)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public Task<List<TractMainForm>> RetrieveAllTracts()
+        {
+            throw new NotImplementedException();
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public Task<object> SearchAllTracts(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="tractMainForm"></param>
+        /// <returns></returns>
+        public Task<object> CreateNewTract(TractMainForm tractMainForm)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="TractID"></param>
+        /// <returns></returns>
+        public Task<object> UpdateTract(string TractID)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="countyMasterMainForm"></param>
+        /// <returns></returns>
+        Task<TractMainForm> ITractMainRepository.AddNewTract(TractMainForm tractMainForm)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="TractMainForm"></param>
+        /// <returns></returns>
+        public Task<TractMainForm> UpdateTract(TractMainForm tractMainForm)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="tractMainForm"></param>
+        /// <returns></returns>
+        public Task<TractMainForm> DeleteTract(TractMainForm tractMainForm)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

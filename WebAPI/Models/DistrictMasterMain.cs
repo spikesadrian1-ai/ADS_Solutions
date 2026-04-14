@@ -12,12 +12,12 @@ namespace WebAPI.Models
         public string DistrictName { get; set; }
         public string Notes { get; set; }
 
-        public Task<object> GetAllDistricts(string name)
+        public Task<object> GetAllDistricts(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<DistrictMasterMain>> RetrieveAllDistricts(int ID)
+        public Task<IEnumerable<DistrictMasterMain>> RetrieveAllDistricts()
         {
             throw new NotImplementedException();
         }

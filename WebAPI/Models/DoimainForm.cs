@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class DoimainForm
+    public partial class DoimainForm : IDOIMainRepository
     {
         public int Id { get; set; }
         public string DoiId { get; set; }
@@ -19,5 +21,20 @@ namespace WebAPI.Models
         public string UnitCalcType { get; set; }
         public string OpeningStatement { get; set; }
         public string ClosingStatement { get; set; }
+
+        public Task<object> GetMainDOIsByID(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<DoimainForm>> RetrieveAllMainDOIs()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchAllMainDOIs(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

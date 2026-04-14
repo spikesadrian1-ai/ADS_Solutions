@@ -5,7 +5,7 @@ using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class Burdens : IBurdensRepository
+    public partial class Burdens //: IBurdensRepository
     {
         public int Id { get; set; }
         public string OwnerId { get; set; }
@@ -36,5 +36,35 @@ namespace WebAPI.Models
         {
             throw new NotImplementedException();
         }
+
+        //Task<object> IBurdensRepository.GetAllBurdens(int ID)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //Task<object> IBurdensRepository.GetBurdensById(int ID)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //Task<IEnumerable<Burdens>> IBurdensRepository.RetrieveAllBurdens()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //Task<IEnumerable<Burdens>> IBurdensRepository.RetrieveAllBurdens(string name)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //Task<object> IBurdensRepository.SearchBurdens(string name)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //Task<object> IBurdensRepository.SearchBurdensByName(string name)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

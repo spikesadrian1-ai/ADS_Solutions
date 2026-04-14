@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class RegionMasterMainForm
+    public partial class RegionMasterMainForm : IRegionMasterRepository
     {
         public int Id { get; set; }
         public string State { get; set; }
@@ -12,5 +14,15 @@ namespace WebAPI.Models
         public string FormationCodes { get; set; }
         public string Active { get; set; }
         public string RegionId { get; set; }
+
+        public Task<IEnumerable<RegionMasterMainForm>> RetrieveAllRegions()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchAllRegions(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -131,7 +131,7 @@ namespace WebAPI.Models
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<ContractMainForm2>> RetrieveAllContracts(string name)
+        public Task<IEnumerable<ContractMainForm2>> RetrieveAllContracts()
         {
             throw new NotImplementedException();
         }

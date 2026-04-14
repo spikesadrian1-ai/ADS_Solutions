@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class DoideckDetails
+    public partial class DoideckDetails : IDoiDeckDetailsRepository
     {
         public int Id { get; set; }
         public string OwnerId { get; set; }
@@ -24,5 +26,37 @@ namespace WebAPI.Models
         public string PayOtherTax1 { get; set; }
         public string PayOtherTax2 { get; set; }
         public string WellId { get; set; }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
+        public Task<object> GetDoiDeckDetailsByID(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public Task<IEnumerable<DoideckDetails>> RetrieveAllDoiDeckDetails()
+        {
+            throw new NotImplementedException();
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public Task<object> SearchAllDoiDeckDetails(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

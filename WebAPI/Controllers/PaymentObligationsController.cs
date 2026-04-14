@@ -28,113 +28,36 @@ namespace WebAPI.Controllers
             _context = context;
         }
 
-        /// <summary>
-        /// ALL PaymentObligations
-        /// CREATE ASYNC METHOD
-        /// </summary>
-        // GET: api/<PaymentObligationsController>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<PaymentObligations>>> RetrieveAllPaymentObligations()
+        public async Task<ActionResult<List<PaymentObligations>>> RetrieveAllPayments(/*[FromQuery] PaginationDTO pagination*/)
         {
+            //var Queryable = _context.CountyMasterMainForm.AsQueryable();
+            //await HttpContext.InsertPaginationParamInResponse(Queryable, pagination.QuantityPerPage);
+            //return await Queryable.Paginate(pagination).ToListAsync();
+
             return await _context.PaymentObligations.ToListAsync();
-
         }
 
 
-        /// <summary>
-        /// BY PaymentObligations TABLE ID
-        /// </summary>
-        [HttpGet("GetAllPaymentObligations/{id}")]
-        public async Task<ActionResult<PaymentObligations>> GetAllPaymentObligations(int id)
+        [HttpGet("SearchAllPaymentsByTractId/{TractId}")]
+        public async Task<IEnumerable<PaymentObligations>> SearchAllTractsPaymentByTractId(string TractId)
         {
-            var burdens = await _context.PaymentObligations.FindAsync(id);
-
-            if (burdens == null)
-            {
-                return NotFound();
-            }
-
-            return burdens;
+            IQueryable<PaymentObligations> query = _context.PaymentObligations;
+            if (!string.IsNullOrEmpty(TractId)) { query = query.Where(e => e.TractId.Contains(TractId)); }
+            //|| e.CountyName.Contains(countyname)
+            if (TractId != null) { query = query.Where(e => e.TractId == TractId); }
+            return query.ToList();
         }
 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        [HttpGet("{SearchAllPaymentObligations}")]
-        public async Task<IEnumerable<PaymentObligations>> SearchAllPaymentObligations(string name)
+        [HttpGet("SearchAllPaymentsByLeaseId/{LeaseId}")]
+        public async Task<IEnumerable<PaymentObligations>> SearchAllTractsPaymentByLeaseId(string LeaseId)
         {
-            try
-            {
-                var result = await SearchAllPaymentObligations(name);
-
-                if (result.Any())
-                {
-                    return (IEnumerable<PaymentObligations>)Ok(result);
-                }
-
-                return (IEnumerable<PaymentObligations>)NotFound();
-            }
-            catch (Exception)
-            {
-                return (IEnumerable<PaymentObligations>)StatusCode(StatusCodes.Status500InternalServerError,
-                    "Error retrieving data from database");
-
-            }
+            IQueryable<PaymentObligations> query = _context.PaymentObligations;
+            if (!string.IsNullOrEmpty(LeaseId)) { query = query.Where(e => e.TractId.Contains(LeaseId)); }
+            //|| e.CountyName.Contains(countyname)
+            if (LeaseId != null) { query = query.Where(e => e.LeaseId == LeaseId); }
+            return query.ToList();
         }
-
-
-        //public async Task<OwnerAddressesMain> AddOwner(OwnerAddressesMain ownerAddressesMain)
-        //{
-        //    var result = await OGDatabaseSchemaV2Context.OwnerAddressesMain.AddAsync(ownerAddressesMain);
-        //    await OGDatabaseSchemaV2Context
-        //}
-
-
-        //public async Task<IEnumerable<IOwnerRepository>> SearchOwners(string name, string tractid)
-        // {
-
-
-        // }
-
-        //public async Task<IEnumerable<OwnerAddressesMain>> SearchOwners(string name, string tractid)
-        ////async Task<IEnumerable<OwnerAddressesMain>> IOwnerRepository.SearchOwners(string name, string tractid)
-        //{
-        //    IQueryable<OwnerAddressesMain> query = _context.OwnerAddressesMain;
-
-        //    if (!string.IsNullOrEmpty(name))
-        //    {
-        //        query = query.Where(e => e.FullName.Contains(name)
-        //                         || e.TractId.Contains(tractid));
-
-        //    }
-        //    if (tractid != null)
-        //    {
-        //        query = query.Where(e => e.TractId == tractid);
-        //    }
-
-        //    return await query.ToList();
-        //}
-
-        //async Task<object> IOwnerRepository.SearchOwners1(string name, string tractid)
-        //{
-        //    IQueryable<OwnerAddressesMain> query = _context.OwnerAddressesMain;
-
-        //    if (!string.IsNullOrEmpty(name))
-        //    {
-        //        query = query.Where(e => e.FullName.Contains(name)
-        //                         || e.TractId.Contains(tractid));
-
-        //    }
-        //    if (tractid != null)
-        //    {
-        //        query = query.Where(e => e.TractId == tractid);
-        //    }
-
-        //    return await query.ToList();
-        //}
-
     }
 }

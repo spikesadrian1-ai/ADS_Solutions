@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class RowMainForm
+    public partial class RowMainForm : IRowMainRepository
     {
         public int Id { get; set; }
         public string RowId { get; set; }
@@ -226,5 +228,20 @@ namespace WebAPI.Models
         public string ModifiedBy { get; set; }
         public DateTime? ModifiedDateTime { get; set; }
         public string TractOwnerPk { get; set; }
+
+        public Task<object> GetROWsByID(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<RowMainForm>> RetrieveAllROWs()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchAllROWs(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

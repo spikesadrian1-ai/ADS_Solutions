@@ -13,7 +13,7 @@ namespace WebAPI.Repositories
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public Task<IEnumerable<Burdens>> RetrieveAllBurdens(string name);
+        public Task<IEnumerable<Burdens>> RetrieveAllBurdens();
 
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace WebAPI.Repositories
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        Task<object> GetAllBurdens(int ID/*, string tractid*/);
+        Task<object> GetBurdensById(int ID/*, string tractid*/);
 
 
         /// <summary>
@@ -29,6 +29,6 @@ namespace WebAPI.Repositories
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        Task<object> SearchBurdens(string name/*, string tractid*/);
+        Task<object> SearchBurdensByName(string name/*, string tractid*/);
     }
 }

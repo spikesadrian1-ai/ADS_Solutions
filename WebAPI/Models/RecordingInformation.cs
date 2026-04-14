@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories;
 
 namespace WebAPI.Models
 {
-    public partial class RecordingInformation
+    public partial class RecordingInformation : IRecordingInformationRepository
     {
         public int Id { get; set; }
         public string TractId { get; set; }
@@ -19,5 +21,20 @@ namespace WebAPI.Models
         public string CreatePaymentHistory { get; set; }
         public string CreateRevenueReceipts { get; set; }
         public string CreateOptionToExtendBonuses { get; set; }
+
+        public Task<object> GetRecordingInformationByID(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<RecordingInformation>> RetrieveAllRecordingInformation()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> SearchAllRecordingInformation(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
